@@ -1,0 +1,32 @@
+<div class='panel panel-default '>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>    
+     <div class='table-responsive'>
+            <table class='table'
+                    *ngIf='taskList && taskList.length'>
+                <thead>
+                    <tr>                        
+                        <th>Task name</th>
+                        <th>Description</th>
+                        <th>Assigned to</th>
+                        <th>State</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let task of taskList'>
+                           <td>
+                             <a [routerLink]="['/tasks', task.Id]">
+                                {{ task.Name }}
+                            </a>
+                          </td>
+                        <td>{{ task.Description }}</td>
+                        <td>{{ task.UserId }}</td>
+                        <td>{{ task.StateId }}</td>                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
