@@ -18,7 +18,6 @@ import { TasksModule } from './tasks/tasks.module';
     HttpClientModule,
     NgbModule.forRoot(),
     TasksModule,
-
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -26,7 +25,6 @@ import { TasksModule } from './tasks/tasks.module';
   ])
  
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

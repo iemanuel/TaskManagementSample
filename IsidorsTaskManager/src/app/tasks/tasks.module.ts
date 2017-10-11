@@ -10,19 +10,16 @@ import { TaskService } from './task.service';
   imports: [
     CommonModule,
     BaseModule,
+    
     RouterModule.forChild([
       { path: 'tasks', component: BoardComponent },
-      { path: 'tasks/:id',
-        
-        component: TaskDetailComponent }
+      { path: 'tasks/:id', component: TaskDetailComponent }
   ]),
 
   ],
-  declarations: [
-     
+  declarations: [     
     BoardComponent,
     TaskDetailComponent
-
   ],
   providers :[TaskService]
 })
