@@ -6,18 +6,25 @@ import { RouterModule } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { TasksModule } from './tasks/tasks.module';
+import { BoardsModule } from './modules/boards.module';
+
+
+import { UserModule } from './modules/users.module';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TasksComponent
+ 
   ],
   imports: [
     BrowserModule, 
     HttpClientModule,
     NgbModule.forRoot(),
-    TasksModule,
+    BoardsModule,
+    UserModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full'},
