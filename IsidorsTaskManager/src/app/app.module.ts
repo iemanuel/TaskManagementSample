@@ -11,12 +11,15 @@ import { BoardsModule } from './modules/boards.module';
 
 import { UserModule } from './modules/users.module';
 import { TasksComponent } from './tasks/tasks.component';
+import { TaskModule } from './modules/task.module';
+import { LoginComponent } from './user/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TasksComponent
+    LoginComponent
+   
  
   ],
   imports: [
@@ -24,9 +27,11 @@ import { TasksComponent } from './tasks/tasks.component';
     HttpClientModule,
     NgbModule.forRoot(),
     BoardsModule,
+    TaskModule,
     UserModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
+      { path: 'login', component: LoginComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: '**', redirectTo: 'home', pathMatch: 'full'}      
   ])

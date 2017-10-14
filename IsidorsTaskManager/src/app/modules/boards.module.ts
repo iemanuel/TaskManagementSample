@@ -7,11 +7,14 @@ import { RouterModule } from '@angular/router';
 import { TaskService } from '../tasks/task.service';
 import { BoardsComponent } from '../boards/boards.component';
 import { TaskDetailComponent } from '../tasks/task-detail.component';
+import { TaskModule } from './task.module';
+import { TasksComponent } from '../tasks/tasks.component';
 
 @NgModule({
   imports: [
     CommonModule,
     BaseModule,
+    TaskModule,
     
     RouterModule.forChild([
       { path: 'boards', component: BoardsComponent },
@@ -22,6 +25,8 @@ import { TaskDetailComponent } from '../tasks/task-detail.component';
   declarations: [     
     BoardComponent,   
     BoardsComponent
+    
+    
   ],
   providers :[TaskService]
 })
