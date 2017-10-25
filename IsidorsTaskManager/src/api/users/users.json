@@ -1,6 +1,7 @@
 [
     {
         "userId": 1,
+        "name":"Emanuel",
         "username": "user",
         "isAdmin": false,
         "password" : "user"
@@ -8,6 +9,7 @@
     {
         "userId": 2,
         "username": "admin",
+        "name":"Administrator",
         "isAdmin": true,
         "password" : "admin"
     }

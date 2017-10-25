@@ -16,8 +16,7 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
     this._taskService.getTasks()
             .subscribe(tasks => {
-                this.taskList = tasks;
-                
+                this.taskList = tasks;                
             },
                 error => this.errorMessage = <any>error);
 }

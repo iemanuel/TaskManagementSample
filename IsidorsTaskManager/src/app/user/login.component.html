@@ -1,3 +1,20 @@
-<p>
-    <button type="button" class="btn btn-default" (click)="login()">Login</button>
-</p>
+<h1>Login</h1>
+<hr>
+
+<div class="alert alert-danger" *ngIf="errorMessage">
+        <strong>Error!</strong> User or password is incorect.
+      </div>
+<div class="col-md-4">
+  <form  #loginForm="ngForm" autocomplete="off" (ngSubmit)="login(loginForm)" novalidate>
+    <div class="form-group" >
+      <label for="userName">User Name:</label>    
+      <input id="userName" autocomplete="off" type="text" (ngModel)="userName" name="userName" required class="form-control" placeholder="User Name" />
+    </div>
+    <div class="form-group" >
+      <label for="password">Password:</label>
+       <input id="password" autocomplete="off" type="password" (ngModel)="password" name="password" required class="form-control" placeholder="Password..." />
+    </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+  </form>
+</div>
