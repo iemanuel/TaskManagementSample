@@ -10,7 +10,7 @@ import { ITask } from '../models/task';
 
 @Injectable()
 export class TaskService {
-    private _tasksUrl = './api/tasks/tasks.json';
+    private _tasksUrl = '../api/tasks/tasks.json';
 
     constructor(private _http: HttpClient) { }
 

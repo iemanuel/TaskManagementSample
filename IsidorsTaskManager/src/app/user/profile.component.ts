@@ -15,8 +15,8 @@ export class ProfileComponent implements OnInit {
   constructor(private router:Router,private auth:AuthService,) { }
 
   ngOnInit() {
-    this.userName = new FormControl(this.auth.currentUser.username);
-    this.alias = new FormControl(this.auth.currentUser.name);
+    this.userName = new FormControl(this.auth.CurrentUser.username);
+    this.alias = new FormControl(this.auth.CurrentUser.name);
 
     this.profileForm = new FormGroup({
       userName: this.userName,

@@ -7,34 +7,46 @@ import "rxjs/add/observable/of";import "rxjs/add/observable/from";
 @Injectable()
 export class AuthService {
 
-  public currentUser:IUser
-  constructor(private _http: HttpClient) { }
+ private _currentUser : IUser
+
+  get CurrentUser(): IUser {
+    try {
+      return JSON.parse(window.localStorage.getItem("currentUser"));
+  } catch (e) {
+
+  }
+  }
+  set CurrentUser(value: IUser) {
+    window.localStorage.setItem("currentUser", JSON.stringify(value));
+      
+  }
+  constructor(private _http: HttpClient) 
+  {
+    
+   }
   
   private _usersUrl = '../api/users/users.json';
   
   isAuthenticated() {
-    return !!this.currentUser;
+    return !!this.CurrentUser;
   }
 
   updateUserDetails(name: string){
-this.currentUser.name = name;
+    this.CurrentUser.name = name;
   }
   login(userName: string, password: string): Observable<boolean>{
  
     var x =  this.getUsers().subscribe(users => {
-    this.currentUser = users.map(users=>users).filter(user=>user.username===userName)[0];
+      this.CurrentUser = users.map(users=>users).filter(user=>user.username===userName)[0];
   
   },error =>   {console.error(error.message)   
-  this.currentUser = undefined;    
+    this.CurrentUser = undefined;    
   });
-      
-      return Observable.of(!!this.currentUser); 
+     
+      return Observable.of(!!this.CurrentUser); 
     
   }
-
-
-
-
+  
   getUsers(): Observable<IUser[]> {
         return this._http.get<IUser[]>(this._usersUrl)
             .do(
@@ -46,6 +58,6 @@ this.currentUser.name = name;
       return Observable.throw(err.message);
   }
   logout() {
-    this.currentUser = undefined;    
+    this.CurrentUser =  undefined;    
   }
 }

@@ -25,7 +25,6 @@ import { mainRoutes } from './routes/Routes';
     BoardsModule,
     TaskModule,
     UserModule,
-   
     RouterModule.forRoot(mainRoutes)
  
   ],

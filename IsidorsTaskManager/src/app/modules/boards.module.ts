@@ -10,14 +10,15 @@ import { TaskModule } from './task.module';
 import { TaskService, BoardService } from '../services';
 import { PriorityPipe,StatePipe } from '../pipes';
 import { BoardsGuardService } from '../boards/boards.guard.service';
+import { UserGuardService } from '../user/user.guard.service';
 @NgModule({
   imports: [
     CommonModule,
     BaseModule,
     TaskModule,    
     RouterModule.forChild([
-      { path: 'boards', component: BoardsComponent },
-      { path: 'boards/:id', canActivate: [ BoardsGuardService ],component: BoardComponent }
+      { path: 'boards', canActivate: [  UserGuardService ],component: BoardsComponent },
+      { path: 'boards/:id', canActivate: [ BoardsGuardService, UserGuardService ],component: BoardComponent }
   ]),
 
   ],
@@ -27,6 +28,6 @@ import { BoardsGuardService } from '../boards/boards.guard.service';
     PriorityPipe,StatePipe
     
   ],
-  providers :[TaskService,BoardService, BoardsGuardService]
+  providers :[TaskService,BoardService, BoardsGuardService,UserGuardService]
 })
 export class BoardsModule { }

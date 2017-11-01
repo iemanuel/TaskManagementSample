@@ -1,3 +1,33 @@
-<p>
-  users works!
-</p>
+<div class='panel panel-default '>
+  <div class='panel-heading'>
+      {{pageTitle}}
+  </div>
+  <div class='panel-body'>    
+   <div class='table-responsive'>
+          <table class='table'
+                  *ngIf='usersList && usersList.length'>
+              <thead>
+                  <tr>                        
+                      <th>Name</th>
+                      <th>User name</th>
+                      <th>Password</th>
+                      <th>Admin</th>                               
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor='let user of usersList'>
+                         <td>
+                           <a [routerLink]="['/user', user.userId]">
+                              {{ user.name }}
+                          </a>
+                        </td> 
+                      
+                      <td>{{ user.username }}</td>  
+                      <td>********</td>                            
+                      <td>{{ user.isAdmin }}</td>                      
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

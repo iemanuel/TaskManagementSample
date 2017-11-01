@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../user/auth.service';
 import { userRoutes } from '../routes/Routes';
-import { UserComponent,LoginComponent,ProfileComponent } from '../user/';
+import { UserComponent,LoginComponent,ProfileComponent,UsersComponent } from '../user/';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { UserComponent,LoginComponent,ProfileComponent } from '../user/';
     RouterModule.forChild(userRoutes),
   ],
   declarations: [
-    UserComponent,
+    UserComponent,   UsersComponent,
     LoginComponent,ProfileComponent
   ],providers: [
     AuthService

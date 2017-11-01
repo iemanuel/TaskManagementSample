@@ -9,17 +9,16 @@ export class UserGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
 
-    if(!this._auth.isAuthenticated
-    ){
-        alert('User not have enough permissions to acces this page.');
+    if(!this._auth.isAuthenticated()){
+        alert('Loggedin users only');
         this._router.navigate(['/login']);
         return false;
     }
-    // else if (!this._auth.currentUser.isAdmin) {
-    //   alert('User not have enough permissions to acces this page.');
-    //   this._router.navigate(['/']);
-    //   return false;
-    // }
-    return true;
+     else if (!this._auth.CurrentUser.isAdmin) {
+       alert('User not have enough permissions to acces this page.');
+       this._router.navigate(['/']);
+       return false;
+     }   
+     return true;
   }
 }

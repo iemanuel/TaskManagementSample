@@ -9,10 +9,9 @@ import { UserGuardService } from '../user/user.guard.service';
   imports: [
     CommonModule,
     BaseModule,  
-  
     RouterModule.forChild([
-      { path: 'tasks',canActivate: [ UserGuardService ],component: TasksComponent }
-      ,{ path: 'task/:id', component: TaskDetailComponent }
+      { path: 'tasks', canActivate: [UserGuardService] ,component: TasksComponent }
+      ,{ path: 'tasks/:id', component: TaskDetailComponent }
   ]),
   ],
   declarations: [

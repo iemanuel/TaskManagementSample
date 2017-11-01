@@ -10,7 +10,7 @@ import { IBoard} from '../models';
 
 @Injectable()
 export class BoardService {
-    private _Url = './api/boards/boards.json';
+    private _Url = '../api/boards/boards.json';
 
     constructor(private _http: HttpClient) { }
 
