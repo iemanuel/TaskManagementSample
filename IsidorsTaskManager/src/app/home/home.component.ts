@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public pageTitle: string = 'Welcome to Isidors Task Management System - ITMS!';
+  public pageTitle: string = 'Welcome to Isidors Task Management System!';
   constructor() { }
 
   ngOnInit() {

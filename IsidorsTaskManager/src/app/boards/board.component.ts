@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITask } from '../models/task';
-import { TaskService } from '../tasks/task.service';
+import { TaskService } from '../services';
 
 @Component({
   selector: 'app-board',

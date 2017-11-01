@@ -7,7 +7,9 @@ import { RouterModule } from '@angular/router';
 import { BoardsComponent } from '../boards/boards.component';
 
 import { TaskModule } from './task.module';
-import { TaskService } from '../tasks/';
+import { TaskService, BoardService } from '../services';
+import { PriorityPipe,StatePipe } from '../pipes';
+import { BoardsGuardService } from '../boards/boards.guard.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,16 +17,16 @@ import { TaskService } from '../tasks/';
     TaskModule,    
     RouterModule.forChild([
       { path: 'boards', component: BoardsComponent },
-      { path: 'boards/:id', component: BoardComponent }
+      { path: 'boards/:id', canActivate: [ BoardsGuardService ],component: BoardComponent }
   ]),
 
   ],
   declarations: [     
     BoardComponent,   
-    BoardsComponent
-    
+    BoardsComponent,
+    PriorityPipe,StatePipe
     
   ],
-  providers :[TaskService]
+  providers :[TaskService,BoardService, BoardsGuardService]
 })
 export class BoardsModule { }

@@ -4,15 +4,16 @@
     "Name" : "Task1",
      "Description" : "Short description here",
      "UserId": 1,
-     "StateId":1
-
+     "StateId":1,
+     "Priority":1
  },
  {
     "Id":2,
     "Name" : "Task2",
     "Description" : "Short description here",
     "UserId": 1,
-    "StateId":1
+    "StateId":1,
+    "Priority":2
 
 },
 {
@@ -20,7 +21,8 @@
     "Name" : "Task3",
     "Description" : "Short description here",
     "UserId": 1,
-    "StateId":1
+    "StateId":1,
+    "Priority":3
 
 },
 {
@@ -28,8 +30,8 @@
     "Name" : "Task4",
     "Description" : "Short description here",
     "UserId": 1,
-    "StateId":1
-
+    "StateId":1,
+    "Priority":4
 }
 
 

@@ -1,9 +1,8 @@
 import { IUser } from "./user";
 import { ITask } from "./task";
 
-export class IBoard  {
+export interface IBoard  {
     Id:number;
     Name: number;
-    User: IUser;
-    Tasks: ITask[]
+    TasksCount: number;
 }

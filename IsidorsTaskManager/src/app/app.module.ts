@@ -7,13 +7,14 @@ import { BoardsModule,UserModule, TaskModule } from './modules';
 import { FormsModule, ReactiveFormsModule,FormGroup } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { TasksComponent } from './tasks/tasks.component';
+
 import { mainRoutes } from './routes/Routes';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,   
+    HomeComponent
     ],
   imports: [
     BrowserModule, 
@@ -24,6 +25,7 @@ import { mainRoutes } from './routes/Routes';
     BoardsModule,
     TaskModule,
     UserModule,
+   
     RouterModule.forRoot(mainRoutes)
  
   ],
